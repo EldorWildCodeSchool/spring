@@ -5,13 +5,17 @@ public class Doctor {
     @Override
     public String toString() {
         return "Doctor{" +
-                "actorID=" + actorID +
-                ", actorName='" + actorName + '\'' +
+                "actorID:" + actorID +
+                ", actorName:'" + actorName + '\'' +
                 '}';
     }
 
     private int actorID;
     private String actorName;
+
+    public Doctor() {
+
+    }
 
     public Doctor(int actorID, String actorName) {
         this.actorID = actorID;

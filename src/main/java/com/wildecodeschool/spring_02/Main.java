@@ -13,11 +13,12 @@ import java.util.List;
 
 @Controller
 @SpringBootApplication
-public class Main2 {
+public class Main {
 
     private static List<Doctor> myDoctors = new ArrayList<>();
+
     public static void main(String[] args) {
-        SpringApplication.run(Main2.class, args);
+        SpringApplication.run(Main.class, args);
 
         Doctor doctor9 = new Doctor(9, "Christopher Eccleston");
         Doctor doctor10 = new Doctor(10, "David Tennant");
@@ -35,7 +36,7 @@ public class Main2 {
 
     @RequestMapping("/doctor/{id}")
     @ResponseBody
-    public String hello(@PathVariable int id) {
+    public String doctor(@PathVariable int id) {
 
         if (id < 9) {
             throw new ResponseStatusException(HttpStatus.SEE_OTHER, "This doctor has retired! Please choose another one (maybe 9 - 13?)");
@@ -48,7 +49,7 @@ public class Main2 {
                 return doctor.toString();
             }
         }
-        return "";
+        return "foo!";
 
     }
 
